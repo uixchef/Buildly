@@ -61,25 +61,27 @@ function GetStartedLink() {
   return (
     <Link
       href="#get-started"
-      className="relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-[12px] border border-white p-[12px] text-[16px] font-medium leading-none text-white outline-none transition [text-shadow:0_0_1px_rgba(0,0,0,0.2)] hover:brightness-110 focus-visible:ring-2 focus-visible:ring-washed-300/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#010619]"
+      className="relative inline-flex shrink-0 rounded-[12px] bg-[linear-gradient(50deg,rgba(255,255,255,1)_0%,rgba(153,153,153,0)_100%)] p-px outline-none transition focus-visible:ring-2 focus-visible:ring-washed-300/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#010619]"
     >
-      <span
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,#0f214a_0%,#0f214a_100%)]"
-      />
-      <span
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(100%_120%_at_85%_-10%,rgba(255,255,255,0.2),transparent_55%)]"
-      />
-      <span
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_80%_at_15%_110%,rgba(255,255,255,0.12),transparent_50%)]"
-      />
-      <span className="relative z-10">Get Started</span>
-      <span
-        aria-hidden
-        className="pointer-events-none absolute inset-0 rounded-[inherit] shadow-[inset_0px_0px_4px_0px_rgb(255,255,255)]"
-      />
+      {/*
+        Match Generate CTA: 1px gradient ring (12px outer / 11px inner) + inset highlight.
+        Nav fill layers stay inside the inner face.
+      */}
+      <span className="relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-[11px] p-[12px] text-[16px] font-medium leading-none text-white shadow-[inset_0px_0px_4px_0px_rgba(255,255,255,0.5)] transition [text-shadow:0_0_1px_rgba(0,0,0,0.2)] hover:brightness-110">
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-0 rounded-[11px] bg-[linear-gradient(90deg,#0f214a_0%,#0f214a_100%)]"
+        />
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-0 rounded-[11px] bg-[radial-gradient(100%_120%_at_85%_-10%,rgba(255,255,255,0.2),transparent_55%)]"
+        />
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-0 rounded-[11px] bg-[radial-gradient(90%_80%_at_15%_110%,rgba(255,255,255,0.12),transparent_50%)]"
+        />
+        <span className="relative z-10">Get Started</span>
+      </span>
     </Link>
   );
 }

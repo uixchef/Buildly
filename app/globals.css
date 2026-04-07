@@ -65,7 +65,8 @@
 }
 
 .buildly-logo-marquee-track {
-  --buildly-logo-strip-w: 1028px;
+  /* One full row: 96+125+90+110+155 + 4×48 gap between logos */
+  --buildly-logo-strip-w: 768px;
   --buildly-logo-marquee-gap: 48px;
 
   display: flex;

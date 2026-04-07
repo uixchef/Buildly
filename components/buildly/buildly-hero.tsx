@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import { buildlyAssets } from "@/lib/buildly-assets";
 
+import { BuildlyLogoMarquee } from "./buildly-logo-marquee";
 import { HeroSectionWithSpotlight } from "./hero-section-with-spotlight";
 import { PromptCard } from "./prompt-card";
 import { SiteHeader } from "./site-header";
@@ -90,31 +91,9 @@ export function BuildlyHero() {
         <div
           className="relative mt-12 w-full max-w-[1100px] shrink-0 px-3 sm:mt-14 sm:px-4 [@media(min-height:721px)]:mt-4 [@media(min-height:721px)]:pb-2"
           role="region"
-          aria-label="Trusted by teams"
+          aria-label="Trusted by teams: Airplane, Railway, Clerk, Mintlify, Trigger.dev"
         >
-          <div className="buildly-logo-marquee-viewport relative mx-auto w-full max-w-[1028px]">
-            <div className="buildly-logo-marquee-track">
-              <Image
-                src={buildlyAssets.logoStrip}
-                alt="Trusted by teams using Airplane, Railway, Clerk, Mintlify, Trigger.dev, and more"
-                width={1028}
-                height={29}
-                className="h-[29px] w-[1028px] shrink-0 object-contain opacity-[0.92]"
-                sizes="(max-width: 1100px) 100vw, 1028px"
-                unoptimized
-              />
-              <Image
-                src={buildlyAssets.logoStrip}
-                alt=""
-                width={1028}
-                height={29}
-                className="h-[29px] w-[1028px] shrink-0 object-contain opacity-[0.92] motion-reduce:hidden"
-                aria-hidden
-                sizes="(max-width: 1100px) 100vw, 1028px"
-                unoptimized
-              />
-            </div>
-          </div>
+          <BuildlyLogoMarquee />
         </div>
         </div>
       </div>

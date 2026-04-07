@@ -13,6 +13,4 @@ export const buildlyAssets = {
   mdiStars: `${b}/generate-mdi-stars.svg`,
   generateShineA: `${b}/generate-shine-a.svg`,
   generateShineB: `${b}/generate-shine-b.svg`,
-  /** Single-row partner strip (Figma 570:13560 / Frame 1618874008). */
-  logoStrip: `${b}/logo-strip.svg`,
 } as const;

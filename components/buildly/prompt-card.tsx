@@ -92,59 +92,57 @@ export function PromptCard({ className }: { className?: string }) {
             </div>
 
             <div className="flex shrink-0 justify-end sm:justify-start">
+              {/*
+                Gradient edge: `border-image` ignores `border-radius` (sharp corners vs fill).
+                1px gradient ring + inner radius 11px matches outer 12px exactly.
+              */}
               <button
                 type="button"
-                className="relative inline-flex min-h-0 shrink-0 items-center justify-center gap-[10px] overflow-hidden rounded-[12px] border border-solid border-white px-3 py-2 text-base font-medium leading-none text-white outline-none transition hover:brightness-110 focus-visible:ring-2 focus-visible:ring-washed-300/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#010619]"
+                className="relative inline-flex min-h-0 shrink-0 rounded-[12px] bg-[linear-gradient(50deg,rgba(255,255,255,1)_0%,rgba(153,153,153,0)_100%)] p-px outline-none transition focus-visible:ring-2 focus-visible:ring-washed-300/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#010619]"
               >
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 rounded-[12px] bg-[#0039c0]"
-                />
-                <span className="relative z-10 size-6 shrink-0">
-                  <Image
-                    src={buildlyAssets.mdiStars}
-                    alt=""
-                    fill
-                    className="object-contain"
-                    sizes="24px"
-                    unoptimized
-                  />
-                </span>
-                <span className="relative z-10 shrink-0 text-center whitespace-nowrap">
-                  Generate
-                </span>
-                <span className="pointer-events-none absolute left-[3.59px] top-[-8.82px] z-[1] flex h-[52.518px] w-[40.423px] items-center justify-center">
-                  <span className="flex-none -rotate-[34.03deg]">
-                    <span className="relative block h-[55.942px] w-[11px]">
-                      <Image
-                        src={buildlyAssets.generateShineA}
-                        alt=""
-                        fill
-                        className="object-contain"
-                        sizes="11px"
-                        unoptimized
-                      />
+                <span className="relative inline-flex min-h-0 w-full shrink-0 items-center justify-center gap-[10px] overflow-hidden rounded-[11px] bg-[#0039c0] px-3 py-2 text-base font-medium leading-none text-white shadow-[inset_0px_0px_4px_0px_rgba(255,255,255,0.5)] transition hover:brightness-110">
+                  <span className="relative z-10 size-6 shrink-0">
+                    <Image
+                      src={buildlyAssets.mdiStars}
+                      alt=""
+                      fill
+                      className="object-contain"
+                      sizes="24px"
+                      unoptimized
+                    />
+                  </span>
+                  <span className="relative z-10 shrink-0 text-center whitespace-nowrap">
+                    Generate
+                  </span>
+                  <span className="pointer-events-none absolute left-[3.59px] top-[-8.82px] z-[1] flex h-[52.518px] w-[40.423px] items-center justify-center">
+                    <span className="flex-none -rotate-[34.03deg]">
+                      <span className="relative block h-[55.942px] w-[11px]">
+                        <Image
+                          src={buildlyAssets.generateShineA}
+                          alt=""
+                          fill
+                          className="object-contain"
+                          sizes="11px"
+                          unoptimized
+                        />
+                      </span>
+                    </span>
+                  </span>
+                  <span className="pointer-events-none absolute left-[48.65px] top-[-13.92px] z-[1] flex h-[52.962px] w-[45.522px] items-center justify-center">
+                    <span className="flex-none -rotate-[38.72deg]">
+                      <span className="relative block h-[59.06px] w-[11px]">
+                        <Image
+                          src={buildlyAssets.generateShineB}
+                          alt=""
+                          fill
+                          className="object-contain"
+                          sizes="11px"
+                          unoptimized
+                        />
+                      </span>
                     </span>
                   </span>
                 </span>
-                <span className="pointer-events-none absolute left-[48.65px] top-[-13.92px] z-[1] flex h-[52.962px] w-[45.522px] items-center justify-center">
-                  <span className="flex-none -rotate-[38.72deg]">
-                    <span className="relative block h-[59.06px] w-[11px]">
-                      <Image
-                        src={buildlyAssets.generateShineB}
-                        alt=""
-                        fill
-                        className="object-contain"
-                        sizes="11px"
-                        unoptimized
-                      />
-                    </span>
-                  </span>
-                </span>
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 z-[5] rounded-[inherit] shadow-[inset_0px_0px_4px_0px_rgb(255,255,255)]"
-                />
               </button>
             </div>
           </div>
