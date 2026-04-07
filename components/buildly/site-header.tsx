@@ -1,5 +1,6 @@
 "use client";
 
+import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,6 +8,8 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { buildlyAssets } from "@/lib/buildly-assets";
@@ -67,7 +70,7 @@ function GetStartedLink() {
         Match Generate CTA: 1px gradient ring (12px outer / 11px inner) + inset highlight.
         Nav fill layers stay inside the inner face.
       */}
-      <span className="relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-[11px] p-[12px] text-[16px] font-medium leading-none text-white shadow-[inset_0px_0px_4px_0px_rgba(255,255,255,0.5)] transition [text-shadow:0_0_1px_rgba(0,0,0,0.2)] hover:brightness-110">
+      <span className="relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-[11px] p-[10px] text-[15px] font-medium leading-none text-white shadow-[inset_0px_0px_4px_0px_rgba(255,255,255,0.5)] transition [text-shadow:0_0_1px_rgba(0,0,0,0.2)] hover:brightness-110 sm:p-[12px] sm:text-[16px]">
         <span
           aria-hidden
           className="pointer-events-none absolute inset-0 rounded-[11px] bg-[linear-gradient(90deg,#0f214a_0%,#0f214a_100%)]"
@@ -90,9 +93,73 @@ function GetStartedLink() {
 const navBarConic =
   "bg-[conic-gradient(from_0deg,rgba(118,154,255,0)_0deg,rgba(118,154,255,0.32)_34deg,rgba(118,154,255,0.1)_64deg,rgba(118,154,255,0)_102deg,rgba(118,154,255,0)_360deg)]";
 
+function MobileNavMenu() {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger
+        className={cn(
+          "inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-white outline-none md:hidden",
+          "hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-washed-300/40",
+        )}
+        aria-label="Open menu"
+      >
+        <Menu className="size-6" aria-hidden />
+      </DropdownMenuTrigger>
+      <DropdownMenuContent
+        align="center"
+        side="bottom"
+        sideOffset={8}
+        collisionPadding={16}
+        className="max-h-[min(70vh,28rem)] w-[min(calc(100vw-2rem),20rem)] overflow-y-auto"
+      >
+        <DropdownMenuItem asChild>
+          <Link href="#buildly-hero-heading">Features</Link>
+        </DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuLabel>Templates</DropdownMenuLabel>
+        <DropdownMenuItem asChild>
+          <Link href="#">SaaS starter</Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <Link href="#">Portfolio</Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <Link href="#">Docs site</Link>
+        </DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuLabel>Docs</DropdownMenuLabel>
+        <DropdownMenuItem asChild>
+          <Link href="#">Getting started</Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <Link href="#">API reference</Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <Link href="#">Changelog</Link>
+        </DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuLabel>Pricing</DropdownMenuLabel>
+        <DropdownMenuItem asChild>
+          <Link href="#">Individuals</Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <Link href="#">Teams</Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <Link href="#">Enterprise</Link>
+        </DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem asChild>
+          <Link href="#">Sign in</Link>
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+
 export function SiteHeader() {
   return (
-    <header className="relative z-20 mx-auto w-full max-w-[1168px] shrink-0 px-4 pt-5">
+    <header className="relative z-20 mx-auto w-full max-w-[1168px] shrink-0 px-3 pt-4 sm:px-4 sm:pt-5">
       <div className="relative overflow-hidden rounded-[16px]">
         <div
           className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[220%] min-h-[120px] w-[220%] min-w-[400px] -translate-x-1/2 -translate-y-1/2 opacity-[0.85]"
@@ -112,14 +179,14 @@ export function SiteHeader() {
         />
         <div
           className={cn(
-            "relative z-10 flex w-full items-center justify-between gap-4 p-4",
+            "relative z-10 flex min-w-0 w-full items-center justify-between gap-2 p-3 sm:gap-4 sm:p-4",
           )}
         >
           <Link
             href="/"
-            className="flex w-[127px] shrink-0 items-center gap-[12px] text-white"
+            className="flex min-w-0 max-w-[min(100%,11rem)] items-center gap-2 text-white sm:max-w-none sm:gap-3"
           >
-            <span className="relative size-10 shrink-0">
+            <span className="relative size-9 shrink-0 sm:size-10">
               <Image
                 src={buildlyAssets.logo}
                 alt=""
@@ -130,7 +197,7 @@ export function SiteHeader() {
                 unoptimized
               />
             </span>
-            <span className="text-center text-[20px] font-extrabold leading-none tracking-tight">
+            <span className="truncate text-[18px] font-extrabold leading-none tracking-tight sm:text-[20px]">
               Buildly
             </span>
           </Link>
@@ -171,10 +238,11 @@ export function SiteHeader() {
             />
           </nav>
 
-          <div className="flex shrink-0 items-center gap-[12px]">
+          <div className="flex min-w-0 shrink-0 items-center gap-2 sm:gap-3">
+            <MobileNavMenu />
             <Link
               href="#"
-              className="inline-flex items-center justify-center px-4 py-2 text-[16px] font-normal leading-none tracking-[-0.16px] text-white hover:text-washed-200"
+              className="hidden items-center justify-center px-3 py-2 text-[16px] font-normal leading-none tracking-[-0.16px] text-white hover:text-washed-200 md:inline-flex"
             >
               Sign in
             </Link>

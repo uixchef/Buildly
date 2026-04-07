@@ -65,14 +65,41 @@
 }
 
 .buildly-logo-marquee-track {
-  /* One full row: 96+125+90+110+155 + 4×48 gap between logos */
+  /* One full row width must match LogoRow: desktop 96+125+90+110+155 + 4×48; mobile smaller logos + 4×24 */
   --buildly-logo-strip-w: 768px;
   --buildly-logo-marquee-gap: 48px;
+  --buildly-logo-inner-gap: 48px;
 
   display: flex;
   width: max-content;
   gap: var(--buildly-logo-marquee-gap);
   animation: buildly-logo-marquee 45s linear infinite;
+}
+
+@media (max-width: 639px) {
+  .buildly-logo-marquee-track {
+    --buildly-logo-strip-w: 529px;
+    --buildly-logo-marquee-gap: 24px;
+    --buildly-logo-inner-gap: 24px;
+    animation-duration: 38s;
+  }
+
+  .buildly-logo-marquee-viewport {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 6%,
+      #000 94%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 6%,
+      #000 94%,
+      transparent 100%
+    );
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

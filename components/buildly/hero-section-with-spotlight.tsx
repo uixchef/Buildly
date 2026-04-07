@@ -73,7 +73,7 @@ export function HeroSectionWithSpotlight({
 
   return (
     <section
-      className="relative isolate min-h-[100svh] overflow-hidden bg-buildly-bg pb-24 pt-0 [@media(min-height:721px)]:flex [@media(min-height:721px)]:h-full [@media(min-height:721px)]:min-h-0 [@media(min-height:721px)]:flex-1 [@media(min-height:721px)]:flex-col [@media(min-height:721px)]:pb-6"
+      className="relative isolate min-h-[100svh] overflow-x-hidden bg-buildly-bg pb-16 pt-0 sm:pb-20 md:pb-24 [@media(min-height:721px)]:flex [@media(min-height:721px)]:h-full [@media(min-height:721px)]:min-h-0 [@media(min-height:721px)]:flex-1 [@media(min-height:721px)]:flex-col [@media(min-height:721px)]:pb-6"
       aria-labelledby={ariaLabelledBy}
       onPointerMove={onPointerMove}
       onPointerLeave={onPointerLeave}
