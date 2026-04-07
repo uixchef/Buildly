@@ -1,6 +1,7 @@
 "use client";
 
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -94,16 +95,38 @@ const navBarConic =
   "bg-[conic-gradient(from_0deg,rgba(118,154,255,0)_0deg,rgba(118,154,255,0.32)_34deg,rgba(118,154,255,0.1)_64deg,rgba(118,154,255,0)_102deg,rgba(118,154,255,0)_360deg)]";
 
 function MobileNavMenu() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <DropdownMenu>
+    <DropdownMenu open={menuOpen} onOpenChange={setMenuOpen}>
       <DropdownMenuTrigger
         className={cn(
-          "inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-white outline-none tablet:hidden",
+          "group inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-white outline-none tablet:hidden",
           "hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-washed-300/40",
+          "data-[state=open]:bg-white/10",
         )}
-        aria-label="Open menu"
+        aria-label={menuOpen ? "Close menu" : "Open menu"}
       >
-        <Menu className="size-6" aria-hidden />
+        <span className="relative size-6">
+          <Menu
+            className={cn(
+              "absolute inset-0 size-6 transition-[opacity,transform] duration-200 ease-out",
+              "motion-reduce:transition-none",
+              "opacity-100 scale-100 group-data-[state=open]:pointer-events-none group-data-[state=open]:scale-90 group-data-[state=open]:opacity-0",
+            )}
+            aria-hidden
+            strokeWidth={2}
+          />
+          <X
+            className={cn(
+              "absolute inset-0 size-6 transition-[opacity,transform] duration-200 ease-out",
+              "motion-reduce:transition-none",
+              "scale-90 opacity-0 group-data-[state=open]:scale-100 group-data-[state=open]:opacity-100",
+            )}
+            aria-hidden
+            strokeWidth={2}
+          />
+        </span>
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="center"
