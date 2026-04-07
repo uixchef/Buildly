@@ -39,7 +39,7 @@ export function PromptCard({ className }: { className?: string }) {
           aria-hidden
         />
 
-        <div className="relative z-10 flex min-h-0 flex-col items-stretch gap-4 pt-4 pr-3 pb-4 pl-3 sm:min-h-[170px] sm:gap-[74px] sm:pt-6 sm:pr-4 sm:pb-4 sm:pl-4 [@media(min-height:721px)]:min-h-[140px] [@media(min-height:721px)]:gap-10">
+        <div className="relative z-10 flex min-h-0 flex-col items-stretch gap-4 pt-4 pr-3 pb-4 pl-3 tablet:min-h-[170px] tablet:gap-[74px] tablet:pt-6 tablet:pr-4 tablet:pb-4 tablet:pl-4 [@media(min-height:721px)]:min-h-[140px] [@media(min-height:721px)]:gap-10">
           <label className="sr-only" htmlFor="buildly-prompt-input">
             Describe what you want to build
           </label>
@@ -51,15 +51,15 @@ export function PromptCard({ className }: { className?: string }) {
             Mobile: stack like ChatGPT / v0 — chips wrap, full-width Generate below.
             Desktop: single row, Generate end-aligned.
           */}
-          <div className="flex w-full min-w-0 shrink-0 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+          <div className="flex w-full min-w-0 shrink-0 flex-col gap-3 tablet:flex-row tablet:items-center tablet:justify-between tablet:gap-4">
             <div
-              className="flex w-full min-w-0 flex-wrap content-start items-center gap-2 sm:gap-[10px]"
+              className="flex w-full min-w-0 flex-wrap content-start items-center gap-2 tablet:gap-[10px]"
               role="group"
               aria-label="Quick options"
             >
               <button
                 type="button"
-                className="flex size-11 shrink-0 items-center justify-center overflow-hidden rounded-[12px] border border-washed-900 bg-[#162048] text-washed-300 transition hover:border-washed-700 hover:bg-[#1a2754] sm:size-10"
+                className="flex size-11 shrink-0 items-center justify-center overflow-hidden rounded-[12px] border border-washed-900 bg-[#162048] text-washed-300 transition hover:border-washed-700 hover:bg-[#1a2754] tablet:size-10"
                 aria-label="Add attachment"
               >
                 <span className="relative size-6">
@@ -73,7 +73,7 @@ export function PromptCard({ className }: { className?: string }) {
                   />
                 </span>
               </button>
-              <span className="inline-flex min-h-11 min-w-0 shrink-0 items-center gap-2 overflow-hidden rounded-[12px] border border-washed-900 bg-[#162048] px-3 py-2 text-sm font-medium leading-tight text-washed-300 sm:min-h-0 sm:gap-[10px] sm:text-base sm:leading-none">
+              <span className="inline-flex min-h-11 min-w-0 shrink-0 items-center gap-2 overflow-hidden rounded-[12px] border border-washed-900 bg-[#162048] px-3 py-2 text-sm font-medium leading-tight text-washed-300 tablet:min-h-0 tablet:gap-[10px] tablet:text-base tablet:leading-none">
                 <span className="relative size-6 shrink-0">
                   <Image
                     src={buildlyAssets.mobile}
@@ -86,7 +86,7 @@ export function PromptCard({ className }: { className?: string }) {
                 </span>
                 Mobile App
               </span>
-              <span className="inline-flex min-h-11 min-w-0 shrink-0 items-center gap-2 overflow-hidden rounded-[12px] border border-washed-900 bg-[#162048] px-3 py-2 text-sm font-medium leading-tight text-washed-300 sm:min-h-0 sm:gap-[10px] sm:text-base sm:leading-none">
+              <span className="inline-flex min-h-11 min-w-0 shrink-0 items-center gap-2 overflow-hidden rounded-[12px] border border-washed-900 bg-[#162048] px-3 py-2 text-sm font-medium leading-tight text-washed-300 tablet:min-h-0 tablet:gap-[10px] tablet:text-base tablet:leading-none">
                 <span className="relative size-6 shrink-0">
                   <Image
                     src={buildlyAssets.messageText}
@@ -101,16 +101,16 @@ export function PromptCard({ className }: { className?: string }) {
               </span>
             </div>
 
-            <div className="flex w-full shrink-0 sm:w-auto sm:justify-end">
+            <div className="flex w-full shrink-0 tablet:w-auto tablet:justify-end">
               {/*
                 Gradient edge: `border-image` ignores `border-radius` (sharp corners vs fill).
                 1px gradient ring + inner radius 11px matches outer 12px exactly.
               */}
               <button
                 type="button"
-                className="relative inline-flex w-full min-h-[48px] shrink-0 rounded-[12px] bg-[linear-gradient(50deg,rgba(255,255,255,1)_0%,rgba(153,153,153,0)_100%)] p-px outline-none transition focus-visible:ring-2 focus-visible:ring-washed-300/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#010619] sm:w-auto sm:min-h-0"
+                className="relative inline-flex w-full min-h-[48px] shrink-0 rounded-[12px] bg-[linear-gradient(50deg,rgba(255,255,255,1)_0%,rgba(153,153,153,0)_100%)] p-px outline-none transition focus-visible:ring-2 focus-visible:ring-washed-300/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#010619] tablet:w-auto tablet:min-h-0"
               >
-                <span className="relative inline-flex min-h-[46px] w-full min-w-0 shrink-0 items-center justify-center gap-2 overflow-hidden rounded-[11px] bg-[#0039c0] px-4 py-2.5 text-base font-medium leading-none text-white shadow-[inset_0px_0px_4px_0px_rgba(255,255,255,0.5)] transition hover:brightness-110 sm:min-h-0 sm:gap-[10px] sm:px-3 sm:py-2">
+                <span className="relative inline-flex min-h-[46px] w-full min-w-0 shrink-0 items-center justify-center gap-2 overflow-hidden rounded-[11px] bg-[#0039c0] px-4 py-2.5 text-base font-medium leading-none text-white shadow-[inset_0px_0px_4px_0px_rgba(255,255,255,0.5)] transition hover:brightness-110 tablet:min-h-0 tablet:gap-[10px] tablet:px-3 tablet:py-2">
                   <span className="relative z-10 size-6 shrink-0">
                     <Image
                       src={buildlyAssets.mdiStars}

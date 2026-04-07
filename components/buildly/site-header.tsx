@@ -70,7 +70,7 @@ function GetStartedLink() {
         Match Generate CTA: 1px gradient ring (12px outer / 11px inner) + inset highlight.
         Nav fill layers stay inside the inner face.
       */}
-      <span className="relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-[11px] p-[10px] text-[15px] font-medium leading-none text-white shadow-[inset_0px_0px_4px_0px_rgba(255,255,255,0.5)] transition [text-shadow:0_0_1px_rgba(0,0,0,0.2)] hover:brightness-110 sm:p-[12px] sm:text-[16px]">
+      <span className="relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-[11px] p-[10px] text-[15px] font-medium leading-none text-white shadow-[inset_0px_0px_4px_0px_rgba(255,255,255,0.5)] transition [text-shadow:0_0_1px_rgba(0,0,0,0.2)] hover:brightness-110 tablet:p-[12px] tablet:text-[16px]">
         <span
           aria-hidden
           className="pointer-events-none absolute inset-0 rounded-[11px] bg-[linear-gradient(90deg,#0f214a_0%,#0f214a_100%)]"
@@ -98,7 +98,7 @@ function MobileNavMenu() {
     <DropdownMenu>
       <DropdownMenuTrigger
         className={cn(
-          "inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-white outline-none md:hidden",
+          "inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-white outline-none tablet:hidden",
           "hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-washed-300/40",
         )}
         aria-label="Open menu"
@@ -159,7 +159,7 @@ function MobileNavMenu() {
 
 export function SiteHeader() {
   return (
-    <header className="relative z-20 mx-auto w-full max-w-[1168px] shrink-0 px-3 pt-4 sm:px-4 sm:pt-5">
+    <header className="relative z-20 mx-auto w-full max-w-[1168px] shrink-0 px-3 pt-4 tablet:px-4 tablet:pt-5">
       <div className="relative overflow-hidden rounded-[16px]">
         <div
           className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[220%] min-h-[120px] w-[220%] min-w-[400px] -translate-x-1/2 -translate-y-1/2 opacity-[0.85]"
@@ -179,14 +179,14 @@ export function SiteHeader() {
         />
         <div
           className={cn(
-            "relative z-10 flex min-w-0 w-full items-center justify-between gap-2 p-3 sm:gap-4 sm:p-4",
+            "relative z-10 flex min-w-0 w-full items-center justify-between gap-2 p-3 tablet:gap-4 tablet:p-4",
           )}
         >
           <Link
             href="/"
-            className="flex min-w-0 max-w-[min(100%,11rem)] items-center gap-2 text-white sm:max-w-none sm:gap-3"
+            className="flex min-w-0 max-w-[min(100%,11rem)] items-center gap-2 text-white tablet:max-w-none tablet:gap-3"
           >
-            <span className="relative size-9 shrink-0 sm:size-10">
+            <span className="relative size-9 shrink-0 tablet:size-10">
               <Image
                 src={buildlyAssets.logo}
                 alt=""
@@ -197,13 +197,13 @@ export function SiteHeader() {
                 unoptimized
               />
             </span>
-            <span className="truncate text-[18px] font-extrabold leading-none tracking-tight sm:text-[20px]">
+            <span className="truncate text-[18px] font-extrabold leading-none tracking-tight tablet:text-[20px]">
               Buildly
             </span>
           </Link>
 
           <nav
-            className="hidden shrink-0 items-center gap-8 md:flex"
+            className="hidden shrink-0 items-center gap-8 tablet:flex"
             aria-label="Primary"
           >
             <Link
@@ -238,11 +238,11 @@ export function SiteHeader() {
             />
           </nav>
 
-          <div className="flex min-w-0 shrink-0 items-center gap-2 sm:gap-3">
+          <div className="flex min-w-0 shrink-0 items-center gap-2 tablet:gap-3">
             <MobileNavMenu />
             <Link
               href="#"
-              className="hidden items-center justify-center px-3 py-2 text-[16px] font-normal leading-none tracking-[-0.16px] text-white hover:text-washed-200 md:inline-flex"
+              className="hidden items-center justify-center px-3 py-2 text-[16px] font-normal leading-none tracking-[-0.16px] text-white hover:text-washed-200 tablet:inline-flex"
             >
               Sign in
             </Link>

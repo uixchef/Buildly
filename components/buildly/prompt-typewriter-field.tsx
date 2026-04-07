@@ -164,8 +164,8 @@ export function PromptTypewriterField({ id, name, className }: Props) {
         rows={3}
         spellCheck={false}
         className={cn(
-          "relative z-10 w-full resize-none border-0 bg-transparent text-left text-[15px] font-medium leading-snug sm:text-base sm:leading-normal",
-          "min-h-[5.5rem] sm:min-h-[4.5rem]",
+          "relative z-10 w-full resize-none border-0 bg-transparent text-left text-[15px] font-medium leading-snug tablet:text-base tablet:leading-normal",
+          "min-h-[5.5rem] tablet:min-h-[4.5rem]",
           "text-washed-200 caret-washed-300",
           "shadow-none outline-none ring-0 ring-offset-0",
           "focus:border-0 focus:shadow-none focus:outline-none focus:ring-0",
@@ -178,7 +178,7 @@ export function PromptTypewriterField({ id, name, className }: Props) {
 
       {showGhost && prefersReducedMotion && reducedStatic && (
         <div
-          className="pointer-events-none absolute inset-0 z-[5] flex items-start text-left text-[15px] font-medium leading-snug text-washed-700 sm:text-base sm:leading-normal"
+          className="pointer-events-none absolute inset-0 z-[5] flex items-start text-left text-[15px] font-medium leading-snug text-washed-700 tablet:text-base tablet:leading-normal"
           aria-hidden
         >
           <span>{reducedStatic}</span>
@@ -187,7 +187,7 @@ export function PromptTypewriterField({ id, name, className }: Props) {
 
       {showGhost && !prefersReducedMotion && ghost.length > 0 && (
         <div
-          className="pointer-events-none absolute inset-0 z-[5] flex items-start text-left text-[15px] font-medium leading-snug text-washed-700 sm:text-base sm:leading-normal"
+          className="pointer-events-none absolute inset-0 z-[5] flex items-start text-left text-[15px] font-medium leading-snug text-washed-700 tablet:text-base tablet:leading-normal"
           aria-hidden
         >
           <span className="inline-flex items-center gap-0.5">

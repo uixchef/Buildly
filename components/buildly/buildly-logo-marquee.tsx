@@ -5,27 +5,27 @@ const TRUSTED_LOGOS = [
   {
     src: "/buildly/logo-airplane.svg",
     className:
-      "h-[22px] w-[72px] sm:h-[29px] sm:w-[96px]",
+      "h-[22px] w-[72px] tablet:h-[29px] tablet:w-[96px]",
   },
   {
     src: "/buildly/logo-railway.svg",
     className:
-      "h-[22px] w-[94px] sm:h-[29px] sm:w-[125px]",
+      "h-[22px] w-[94px] tablet:h-[29px] tablet:w-[125px]",
   },
   {
     src: "/buildly/logo-clerk.svg",
     className:
-      "h-[22px] w-[68px] sm:h-[29px] sm:w-[90px]",
+      "h-[22px] w-[68px] tablet:h-[29px] tablet:w-[90px]",
   },
   {
     src: "/buildly/logo-mintlify.svg",
     className:
-      "h-[22px] w-[83px] sm:h-[29px] sm:w-[110px]",
+      "h-[22px] w-[83px] tablet:h-[29px] tablet:w-[110px]",
   },
   {
     src: "/buildly/logo-trigger.svg",
     className:
-      "h-[22px] w-[116px] sm:h-[29px] sm:w-[155px]",
+      "h-[22px] w-[116px] tablet:h-[29px] tablet:w-[155px]",
   },
 ] as const;
 
@@ -50,7 +50,7 @@ function LogoRow({
           width={96}
           height={29}
           className={`shrink-0 object-contain object-left ${logo.className}`}
-          sizes="(max-width: 639px) 72px, 96px"
+          sizes="(max-width: 809px) 72px, 96px"
           unoptimized
         />
       ))}

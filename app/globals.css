@@ -4,6 +4,10 @@
 @theme {
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 
+  /* Viewport bands: mobile ≤809px (default), tablet 810–1199px, desktop ≥1200px */
+  --breakpoint-tablet: 810px;
+  --breakpoint-desktop: 1200px;
+
   --color-buildly-bg: #010619;
   --color-washed-200: #cad5ff;
   --color-washed-300: #b1c1ff;
@@ -22,6 +26,17 @@
 @keyframes prompt-border-spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+/** Hero ambient spotlight on viewports without cursor (mobile / tablet): orbit around the frame */
+@keyframes buildly-hero-ambient-orbit {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
@@ -76,7 +91,7 @@
   animation: buildly-logo-marquee 45s linear infinite;
 }
 
-@media (max-width: 639px) {
+@media (max-width: 809px) {
   .buildly-logo-marquee-track {
     --buildly-logo-strip-w: 529px;
     --buildly-logo-marquee-gap: 24px;
