@@ -1,0 +1,15 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 716 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="bg">
+<g id="Rectangle 87">
+<rect x="1" y="1" width="714" height="168" rx="11" fill="var(--fill-0, #0A112D)"/>
+<rect x="1" y="1" width="714" height="168" rx="11" stroke="url(#paint0_linear_0_53)" stroke-width="2"/>
+<rect x="1" y="1" width="714" height="168" rx="11" stroke="var(--stroke-1, #FDFDFD)" stroke-opacity="0.05" stroke-width="2"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_53" x1="11.9334" y1="2.98245" x2="29.8403" y2="128.686" gradientUnits="userSpaceOnUse">
+<stop stop-color="#769AFF"/>
+<stop offset="1" stop-color="#769AFF" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

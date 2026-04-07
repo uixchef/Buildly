@@ -1,0 +1,105 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+
+  --color-buildly-bg: #010619;
+  --color-washed-200: #cad5ff;
+  --color-washed-300: #b1c1ff;
+  --color-washed-400: #a2b5ff;
+  --color-washed-700: #6374b5;
+  --color-washed-900: #3a446b;
+  --color-nav-border: #cbd6ff;
+}
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+}
+
+@keyframes prompt-border-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/**
+ * Trusted-by logo strip — seamless loop (two copies).
+ * Gap between copies must match --buildly-logo-marquee-gap; translate one segment (width + gap), not -50%.
+ */
+@keyframes buildly-logo-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(
+      calc(-1 * (var(--buildly-logo-strip-w) + var(--buildly-logo-marquee-gap))),
+      0,
+      0
+    );
+  }
+}
+
+/** Fade strip at edges via alpha mask — avoids solid “black box” gradient overlays */
+.buildly-logo-marquee-viewport {
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 12%,
+    #000 88%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 12%,
+    #000 88%,
+    transparent 100%
+  );
+  mask-mode: alpha;
+  -webkit-mask-mode: alpha;
+}
+
+.buildly-logo-marquee-track {
+  --buildly-logo-strip-w: 1028px;
+  --buildly-logo-marquee-gap: 48px;
+
+  display: flex;
+  width: max-content;
+  gap: var(--buildly-logo-marquee-gap);
+  animation: buildly-logo-marquee 45s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buildly-logo-marquee-track {
+    animation: none;
+  }
+}
+
+/* Tall viewports: single-screen landing — no page scroll, flex chain fills 100dvh */
+@media (min-height: 721px) {
+  html {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    height: 100dvh;
+    min-height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body > main {
+    flex: 1 1 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+}
