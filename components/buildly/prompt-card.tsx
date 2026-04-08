@@ -39,7 +39,7 @@ export function PromptCard({ className }: { className?: string }) {
           aria-hidden
         />
 
-        <div className="relative z-10 flex min-h-0 flex-col items-stretch gap-4 pt-4 pr-3 pb-4 pl-3 tablet:min-h-[170px] tablet:gap-[74px] tablet:pt-6 tablet:pr-4 tablet:pb-4 tablet:pl-4 [@media(min-height:721px)]:min-h-[140px] [@media(min-height:721px)]:gap-10">
+        <div className="relative z-10 flex min-h-0 flex-col items-stretch gap-4 pt-4 pr-3 pb-4 pl-3 tablet:min-h-[170px] tablet:gap-[74px] tablet:pt-4 tablet:pr-4 tablet:pb-4 tablet:pl-4 [@media(min-height:721px)]:min-h-[140px] [@media(min-height:721px)]:gap-10">
           <label className="sr-only" htmlFor="buildly-prompt-input">
             Describe what you want to build
           </label>
